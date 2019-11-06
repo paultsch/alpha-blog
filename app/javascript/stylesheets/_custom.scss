@@ -1,5 +1,62 @@
+
 @import "~bootstrap/scss/bootstrap"; // never forget the semicolon at the end
 
-h1{
-  color: blue;
+#logo {
+  float: left;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo.hover{
+  text-decoration: none;
+}
+
+.center{
+  text-align: center;
+}
+
+.jumbotron{
+  background-image: url('../../assets/images/new_cover_page.jpg');
+  background-size: cover;
+  height: 550px;
+  margin-top: 20px;
+}
+
+.jumbotron h1 {
+  color: white;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.btn-xlarge{
+  background-color: black;
+}
+
+footer{
+  margin-top:45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a.hover{
+  color: #222
+}
+
+footer small{
+  float: left;
+}
+
+footer ul{
+  float: right;
+  list-style: none;
+}
+
+footer ul li{
+  float: left;
+  margin-left: 15px;
 }
