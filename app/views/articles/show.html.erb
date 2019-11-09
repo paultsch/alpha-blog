@@ -1,13 +1,14 @@
-<h1>Showing selected article</h1>
+<h2 align="center">Title: <%= @article.title %></h2>
 
-<p>
-  Title: <%= @article.title %>
-</p>
+<div class="card" style="padding: 20px; text-align: center;">
+  <div class="card-block">
+    <h4 class="card-title">Description:</h4>
+    <p class="card-text"><%= simple_format(@article.description) %></p>
+  </div>
+</div>
 
-<p>
-  Description: <%= @article.description %>
-</p>
+<div class="article-actions">
+  <%= link_to "Back to articles", articles_path, class: "btn btn-xs btn-primary" %>
+  <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-success" %>
 
-<p>
-  <%= link_to "Back to articles", articles_path %> | <%= link_to "Edit this article", edit_article_path(@article) %>
-</p>
+</div>
