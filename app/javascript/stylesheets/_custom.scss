@@ -1,6 +1,5 @@
 @import "~bootstrap/scss/bootstrap"; // never forget the semicolon at the end
 
-<<<<<<< HEAD
 #logo {
   float: left;
   font-size: 1.7em;
@@ -18,10 +17,10 @@
 }
 
 .jumbotron{
-  // background-image: url('../../assets/images/new_cover_page.jpg');
-  // background-size: cover;
-  // height: 550px;
-  // margin-top: 20px;
+  background-image: url('../../assets/images/new_cover_page.jpg');
+  background-size: cover;
+  height: 550px;
+  margin-top: 20px;
 }
 
 .jumbotron h1 {
@@ -60,10 +59,6 @@ footer ul{
 footer ul li{
   float: left;
   margin-left: 15px;
-=======
-h1{
-  color: blue;
->>>>>>> parent of e6f5608... adding styling
 }
 
 .article_actions {
