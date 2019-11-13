@@ -2,21 +2,38 @@
 <p>
 <%= link_to "Create new Article", new_article_path %>
 </p>
-<table>
+<!-- <table>
 <tr>
   <th>Title</th>
   <th>Description</th>
   <th>View</th>
   <th>Update</th>
 </tr>
-<tr>
+<tr> -->
 <% @articles.each do |article|%>
-  <tr>
+  <div class="card" style="padding: 20px; text-align: center;">
+    <div class="card-block">
+        <h4 class="card-title"><%= article.title%></h4>
+        <p class="card-text"><%= simple_format(article.description) %></p>
+        <div class="article-meta-details">
+          <small>
+            Created by: <%= article.user.username if article.user%>,
+            <%= time_ago_in_words(article.created_at) %> ago,
+            last updated: <%= time_ago_in_words(article.updated_at) %>
+          </small><br>
+        </div>
+      <%= link_to "View", article_path(article), class: "btn btn-xs btn-success" %>
+      <%= link_to "Edit", edit_article_path(article), class: "btn btn-xs btn-primary" %>
+      <%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Arm you sure?"}, class: "btn btn-xs btn-danger" %>
+    </div>
+  </div>
+
+  <!-- <tr>
     <td><%= article.title %></td>
     <td><%= article.description %></td>
-    <td><%= link_to "View", article_path(article) %></td>
-    <td><%= link_to "Edit", edit_article_path(article) %></td>
-    <td><%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Arm you sure?"} %></td>
-  </tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr> -->
 <% end %>
-</table>
+<!-- </table> -->
