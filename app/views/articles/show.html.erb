@@ -1,13 +1,22 @@
-<h2 align="center">Title: <%= @article.title %></h2>
+<h1 align="center"><%= @article.title %></h1>
 
-<div class="card" style="padding: 20px; text-align: center;">
-  <div class="card-block">
-    <h4 class="card-title">Description:</h4>
+<div class="row border" style="padding: 20px;">
+  <div class="col-md-8">
+    <h2 class="card-title">Description:</h2>
     <p class="card-text"><%= simple_format(@article.description) %></p>
   </div>
-</div>
+    <div class="col-md-4">
+        <%= gravatar_img_card(@article.user) if @article.user %>
+      <div class="card-body">
+        <div class="card-title">
+          <h2><%= link_to(@article.user.username, user_path(@article.user, class: "card-title")) if @article.user %></h2>
+          <small><%= pluralize(@article.user.articles.count, "article") if @article.user %></small>
 
-<div class="article-actions">
-  <%= link_to "Back to articles", articles_path, class: "btn btn-xs btn-primary" %>
-  <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-success" %>
-</div>
+        </div>
+        <div class="article-actions">
+          <%= link_to "Back to articles", articles_path, class: "btn btn-xs btn-primary" %>
+          <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-success" %>
+        </div>
+      </div>
+    </div>
+  </div>
