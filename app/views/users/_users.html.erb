@@ -4,7 +4,7 @@
         <%= gravatar_img_card(user) %>
       <div class="card-body">
         <div class="card-title">
-          <h2><%= link_to user.username, user_path(user, class: "card-title") %></h2>
+          <h2><%= link_to user.username, user_path(user), class: "card-title" %></h2>
           <small><%= pluralize(user.articles.count, "article") if user.articles %></small>
         </div>
       </div>
