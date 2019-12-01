@@ -1,0 +1,15 @@
+<h1 align="center"><%= "Category: " + @category.name %></h1>
+
+<div align="center">
+  <%= will_paginate @category_articles %>
+</div>
+
+<p>
+  <%= link_to "Create new Article", new_article_path %>
+</p>
+
+<%= render 'articles/article', obj: @category_articles %>
+
+<div class="row center">
+  <%= will_paginate @category_articles %>
+</div>
